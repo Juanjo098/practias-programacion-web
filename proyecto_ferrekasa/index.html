@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <!-- Metadatos para el navegador -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ferrekasa</title>
+        <!-- Ícono -->
+        <link rel="icon" href="img/icono.ico">
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css">
+        <!-- Íconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="barra_supperior">
+                <div class="barra_supperior_contenedor">
+                    <div class="nosotros">
+                        <a href="#">Nosotros</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                    <div class="login">
+                        <a href="#">Iniciar seción</a>
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+            </nav>
+            <nav class="barra_inferior">
+                <div class="barra_inferior_contenedor">
+                    <a href="index.html"><img src="img/logo.jpg" alt="Image not found" class="logo"></a>
+                    <div class="menu_plegable">
+                        <div class="navegacion">
+                            <a href="#" class="op-nav">Productos</a>
+                            <a href="#" class="op-nav">Trooper</a>
+                        </div>
+                        <div class="busqueda">
+                            <input type="text" id="busqueda">
+                            <button type="submit" id="buscar">Buscar</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-bars" onclick="desplegar()"></i>
+                </div>
+            </nav>
+        </header>
+        <script src="js/index.js"></script>
+    </body>
+</html>

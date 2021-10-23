@@ -1,0 +1,136 @@
+create database cw;
+
+use cw;
+
+#Tabla de usuarios
+create table usuarios(
+id_usuario int not null,
+nombre varchar(100) not null,
+usr varchar(10) not null,
+cve varchar(50) not null,
+primary key (id_usuario)
+);
+
+insert into usuarios values(100,'Jose Juan Lopez Tellez','jose','jose');
+select * from usuarios;
+
+call insertausuario('Patricia','jesus1','paty',@b);
+
+select @b;
+
+#Martes 1 de diciembre 2015
+#Menus de usuario
+create table menus(
+id_menu int not null,
+titulo varchar(30) not null,
+link varchar(50) not null,
+primary key (id_menu)
+);
+
+insert into menus values(5,'Inicio','index.php');
+insert into menus values(10,'Productos','productos.php');
+insert into menus values(15,'Ofertas','ofertas.php');
+insert into menus values(20,'Pedidos','pedidos.php');
+insert into menus values(25,'Ver Carrito','carrito.php');
+insert into menus values(30,'Acerca de','acercade.php');
+insert into menus values(35,'Cerrar Sesion','cerrar.php');
+
+select * from menus;
+select * from usuarios;
+
+#Tabla de los menus por usuario
+create table menusporusuarios(
+id_menusporusuario int not null auto_increment,
+id_usuario int not null, #llave de usuario
+id_menu int not null, # llave del menu
+primary key (id_menusporusuario),
+foreign key (id_usuario) references usuarios (id_usuario),
+foreign key (id_menu) references menus(id_menu)
+);
+
+insert into menusporusuarios(id_usuario,id_menu) values(100,5);
+insert into menusporusuarios(id_usuario,id_menu) values(100,10);
+insert into menusporusuarios(id_usuario,id_menu) values(100,15);
+insert into menusporusuarios(id_usuario,id_menu) values(100,20);
+insert into menusporusuarios(id_usuario,id_menu) values(100,25);
+insert into menusporusuarios(id_usuario,id_menu) values(100,30);
+insert into menusporusuarios(id_usuario,id_menu) values(100,35);
+
+select * from menusporusuarios;
+
+select @b;
+call insertamenudeusuarios (200,5,@b);
+call insertamenudeusuarios (200,10,@b);
+call insertamenudeusuarios (200,35,@b);
+call insertamenudeusuarios (200,5,@b);
+
+
+select m.id_menu, m.titulo, m.link
+from menus m, menusporusuarios mpu
+where m.id_menu=mpu.id_menu and mpu.id_usuario=200;
+
+
+select id_menu, titulo, link
+from menus where id_menu in (
+select id_menu from menusporusuarios
+where id_usuario=200);
+
+call regresamenus(10,@m);
+select @m;
+
+create table categorias(
+id_categoria int not null,
+nombre varchar(100) not null,
+imagen varchar(50) not null,
+primary key (id_categoria)
+);
+
+insert into categorias values(500,"Impresoras","impresoras.jpg");
+insert into categorias values(1000,"Computadoras de escritorio","computadorasdeescritorio.jpg");
+insert into categorias values(1500,"Laptops","laptops.jpg");
+insert into categorias values(2000,"Video proyectores","videoproyectores.jpg");
+insert into categorias values(2500,"Pantallas","pantallas.jpg");
+
+select*from categorias;
+
+#Crear un procedimiento que regrese las categorias
+
+
+#---------------------------------  Jueves 3 Diciembre
+
+#Tabla productos
+create table productos(
+id_producto integer auto_increment,
+id_categoria integer not null,
+nombre varchar(100) not null,
+descripcion varchar(150) not null,
+precio double not null,
+descuento int default 0,
+imagen varchar(50) not null,
+primary key(id_producto),
+foreign key (id_categoria) references categorias (id_categoria)
+);
+
+#insercion de registros a la base de datos
+#Categoria: Impresoras
+insert into productos values (null,500,'IMPRESORA LASER COLOR OKDATA C110','BN 20PPM, COLOR 5PPM OFERTA',1701,0,'img/impresora1.jpg');
+insert into productos values (null,500,'IMPRESORA LASER COLOR MINOLTA 7450II','24/5PPM, RED 9600X600DPI WIN MAC TABL',32389,0,'img/impresora2.jpg');
+insert into productos values (null,500,'IMPRESORA LASER COLOR LEXMARK C736DN','35PPM NEG 35PPM CLR 256 1200X1200 DUPLEX RED',14800,0,'img/impresora3.jpg');
+insert into productos values (null,500,'IMPRESORA HP LASERJET 5200TN','TABLOIDE 35PPM',37401,0,'img/impresora4.jpg');
+insert into productos values (null,500,'IMPRESORA HP LASERJET ENTERPRISE','M602X INC 3 BAND IMPRES AUT DOBLE CARA',23888,0,'img/impresora5.jpg');
+insert into productos values (null,500,'IMPRESORA LASER BROTHER HL2270DW',' 27PPM DUPLEX/WIRELESS/2400X600DPI',1542,0,'img/impresora6.jpg');
+#Categoria: Pantallas
+insert into productos values (null,2500,'TV SAMSUNG 18.5 PULG LED 2HDMI USB','VGA COAXIAL 1366X768 5W X 2C',2582,0,'img/monitor1.jpg');
+insert into productos values (null,2500,'MON PROFESIONAL 40 PULG FHD VGA','DVI HDMI USB LAN 12X7 3YW',11582,0,'img/monitor2.jpg');
+insert into productos values (null,2500,'TV LG 60 PULG LED, FULL HD','SMART 3 HDMI, 3 USB',15944,0,'img/monitor3.jpg');
+insert into productos values (null,2500,'TV LG 49 PULG, LED, ULTRA HD','2 HDMI, 1 USB',12680,0,'img/monitor4.jpg');
+insert into productos values (null,2500,'TV E-LED TOSHIBA 40L1400UM 40 PULG ',' 1080P 60HZ HD USB HDMI',5034,0,'img/monitor5.jpg');
+#Categoria: Computadoras
+insert into productos values (null,1000,'AIO LENOVO S20-00 19.5 PULG CEL DC 1800','RAM 2GB D.D.500GB WIF,HDMI DVDRW FREE DOS ESTE PRODUCTO YA INCLUYE MONITOR',5368,0,'img/computadora1.jpg');
+insert into productos values (null,1000,'DESKTOP LENOVO H500S, CELERON J1800','RAM 4GB D.D.500GB 7-1 DVDRW WIFI WIN 8.1 BING MONITOR LENOVO LED 18.5 PULG NEGRO 1WY',5761,0,'img/computadora2.jpg');
+insert into productos values (null,1000,'DESKTOP ACER VERITON VX4630G-SI341X','RAM 4GB D.D.500GB DVDRW WIN8EM 1WTY	MONITOR HP LV1911 LED 18.5 1366X768 VGA 3WTY',7899,0,'img/computadora3.jpg');
+insert into productos values (null,1000,'AIO HP ELITE ONE 800 G1 CI5-4570S 2.9GHZ 23 PULG','RAM 8GB D.D.500GB DVDRW WIN8PRO64 3WTY	MONITOR HP LV1911 LED 18.5 1366X768 VGA 3WTY',15061,0,'img/computadora4.jpg');
+insert into productos values (null,1000,'HP PRODESK 800 G1 MT CI7-4770 3.40GHZ','RAM 4GB D.D.500GB DVSM WIN7/8PRO 1WTY MONITOR HP LV1911 LED 18.5 1366X768 VGA 3WTY',12362,0,'img/computadora5.jpg');
+
+
+select *from productos;

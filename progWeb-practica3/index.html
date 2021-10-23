@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Práctica 3</title>
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/misEstilos.css">
+    </head>
+    <body>
+        <h1>Formularios</h1>
+        <form action="">
+            Selecciona tu color favorito <input type="color" name="colorFavorito" class="color_favorito"><br><br>
+            Fecha de nacimeinto <input type="date" name="fechaNacimiento" class="fecha-nacimiento"><br><br>
+            Hora de nacimiento <input type="datetime-local" name="horaNacimiento" class="hora_nacimiento"><br><br>
+            Dia de nacimiento <input type="number" name="diaNacimiento" id="dia-nacimiento" min="1" max="30"><br><br>
+            Estado de ánimo <input type="range" name="estadoAnimo" class="estado-animo" onchange="mostrarValor(this)"><br><br>
+            Estado de nacimiento <br><br>
+            <select name="estadoNacimiento" class="estado-nacimiento" multiple>
+                <option value="100">Michoacán</option>
+                <option value="200">Jalisco</option>
+                <option value="300" selected>Colima</option>
+                <option value="400">Guanajuato</option>
+                <option value="500">San Luis Potosi</option>
+            </select><br><br>
+            Mis lenguajes preferidos<br><br>
+            <input type="checkbox" name="html" id="html" class="lenguaje-html">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" name="css" id="css" class="css">
+            <label for="css">CSS</label><br>
+            <input type="checkbox" name="javascript" id="javascript" class="lenguaje-javascript">
+            <label for="javascript">Java Script</label>
+            <br><br>
+            Selecciona tu carrera<br><br>
+            <input type="radio" value="Ing. en Sistemas computaciones" class="isc" id="isc" name="carreras" onclick="seleccionCarrera(this)">
+            <label for="isc">Ing. en Sistemas computaciones</label>
+            <br><br>
+            <input type="radio" value="Arquitectura" class="arq" id="arq" name="carreras" onclick="seleccionCarrera(this)">
+            <label for="arq">Arquitectura</label>
+            <br><br>
+            <input type="radio" value="Ing. Gestión de Empresas" class="igp" id="igp" name="carreras" onclick="seleccionCarrera(this)">
+            <label for="igp">Ing. Gestión de Empresas</label>
+            <br><br>
+            <input type="radio" value="Contador público" class="cp" id="cp" name="carreras" onclick="seleccionCarrera(this)">
+            <label for="cp">Contador público</label>
+            <br><br>
+            <input type="button" value="Enviar" onclick="mostrarDatos()"><br><br>
+        </form>
+        <script src="js/app.js"></script>
+    </body>
+</html>
