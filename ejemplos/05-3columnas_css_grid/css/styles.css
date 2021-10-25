@@ -46,3 +46,31 @@ p {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.contenedor_grid{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: "sidebar1 entrada sidebar2";
+    column-gap: 2rem;
+}
+
+.contenido-principal{
+    grid-area: entrada;
+}
+
+.sidebar1{
+    grid-area: sidebar1;
+}
+
+.sidebar2{
+    grid-area: sidebar2;
+}
+
+@media (max-width: 768px){
+    .contenedor_grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "entrada entrada" "sidebar1 sidebar2" ;
+        column-gap: 2rem;
+    }
+}
