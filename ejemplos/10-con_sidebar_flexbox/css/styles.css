@@ -46,3 +46,21 @@ p {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+@media (min-width: 768px){
+    .con-sidebar{
+        display: flex;
+        justify-content: space-between; /*Para felex-basics*/
+        /* gap: 2rem; */
+    }
+
+    aside{
+        /* flex: 1; Para espefificar el tamaño del la columna */
+        flex-basis: calc(25% - 1rem);
+    }
+
+    article{
+        /* flex: 3; */
+        flex-basis: calc(75% - 1rem);
+    }
+}

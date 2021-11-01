@@ -1,0 +1,78 @@
+:root{
+    --funte: 'Krub', sans-serif;
+    --naranja_oscuro: #f26a21;
+    --naranja_claro: #f7911c;
+    --negro: #212121;
+    --blanco: #fff;
+    --opaco: rgba(0, 0, 0, 0.3);
+}
+
+.contenedor{
+    max-width: 800px;
+    width: 90%;
+    margin: 8rem auto;
+    padding: 2rem;
+    border: solid 2px;
+    border-radius: 2rem;
+}
+
+.contenedor .iniciar-sesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contenedor h2{
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.contenedor p{
+    text-align: center;
+    margin: 2rem 0 0 0;
+}
+
+.contenedor p a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.iniciar-sesion .campo{
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label{
+    margin: 0 0 1rem 2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.campo input{
+    margin: 0 0 4rem 0;
+    padding: 1rem;
+    border-radius: 2rem;
+    outline: none;
+}
+
+.iniciar-sesion .enviar{
+    display: flex;
+    justify-content: center;
+}
+
+.enviar input{
+    padding: 1rem 4rem;
+    font-weight: 700;
+    border-radius: 2rem;
+    background-color: var(--naranja_claro);
+    outline: none;
+    cursor: pointer;;
+}
+
+.enviar input:hover{
+    background-color: var(--naranja_oscuro);
+}

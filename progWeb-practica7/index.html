@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Práctica 7</title>
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    </head>
+    <body>
+        <div class="conteiner">
+            <aside class="dashboard">
+                <h2>Deahboard</h2>
+                <ul class="menu">
+                    <li class="opciones"><i class="fas fa-home"></i> Inicio</li>
+                    <li class="opciones"><i class="far fa-file-alt"></i> Entradas</li>
+                    <li class="opciones"><i class="fas fa-user-friends"></i> Usuarios</li>
+                    <li class="opciones"><i class="fas fa-cog"></i> Configuración</li>
+                    <li class="opciones"><i class="fas fa-sign-out-alt"></i> Salir</li>
+                </ul>
+            </aside>
+            <div class="entrada">
+                <h2>Nueva entrada</h2>
+                <form action="" class="entrada-formulario">
+                    <input type="text" placeholder="Título de la entrada" class="titulo">
+                    <textarea name="texto" id="texto" class="texto" placeholder="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis necessitatibus adipisci illo ducimus dolorum, eos architecto sapiente nihil doloremque quibusdam, mollitia laboriosam unde atque minus!"></textarea>
+                    <button type="submit" class="boton">Enviar</button>
+                </form>
+            </div>
+            <div class="estadistica-comentarios">
+                <h2>Estadística</h2>
+                <div class="estadistica-conteiner">
+                    <div class="estadistica">
+                        <div class="vistas">
+                            <p class="cantidad">15,236</p>
+                            <legend class="tipo">Visitas</legend>
+                        </div>
+                        <div class="registros">
+                            <p class="cantidad">1,831</p>
+                            <legend class="tipo">Registros</legend>
+                        </div>
+                        <div class="ingresos">
+                            <p class="cantidad">$160,548</p>
+                            <legend class="tipo">Ingresos</legend>
+                        </div>
+                    </div>
+                </div>
+                <h2>Comentarios</h2>
+                <div class="comentarios-conteiner">
+                    <div class="comentario">
+                        <div class="imagen">
+                            <img src="img/man.jpg" alt="" class="profiel-img">
+                        </div>
+                        <div class="titulo-direccion">
+                            <a href="#" class="user-name">John Doe</a>
+                            <p>en <a href="#" class="entrada-hecha">Mi primer entrada</a></p>
+                        </div>
+                        <div class="comentario-texto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quidem corrupti est repellendus consequatur aliquam, quas nisi voluptatibus qui architecto vitae vel tempore a, sunt ad incidunt necessitatibus. Labore, natus?</p>
+                        </div>
+                        <div class="acciones">
+                            <button type="button" class="aceptar" id="aceptar">Aceptar</button>
+                            <button type="button" class="eliminar" id="eliminar">Eliminar</button>
+                            <button type="button" class="bloquear" id="bloquear">Bloquear usuario</button>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <div class="imagen">
+                            <img src="img/woman.jpg" alt="" class="profiel-img">
+                        </div>
+                        <div class="titulo-direccion">
+                            <a href="#" class="user-name">Jane Doe</a>
+                            <p>en <a href="#" class="entrada-hecha">Mi primer entrada</a></p>
+                        </div>
+                        <div class="comentario-texto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quidem corrupti est repellendus consequatur aliquam, quas nisi voluptatibus qui architecto vitae vel tempore a, sunt ad incidunt necessitatibus. Labore, natus?</p>
+                        </div>
+                        <div class="acciones">
+                            <button type="button" class="aceptar" id="aceptar">Aceptar</button>
+                            <button type="button" class="eliminar" id="eliminar">Eliminar</button>
+                            <button type="button" class="bloquear" id="bloquear">Bloquear usuario</button>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <div class="imagen">
+                            <img src="img/woman.jpg" alt="" class="profiel-img">
+                        </div>
+                        <div class="titulo-direccion">
+                            <a href="#" class="user-name">Jane Doe</a>
+                            <p>en <a href="#" class="entrada-hecha">Mi primer entrada</a></p>
+                        </div>
+                        <div class="comentario-texto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quidem corrupti est repellendus consequatur aliquam, quas nisi voluptatibus qui architecto vitae vel tempore a, sunt ad incidunt necessitatibus. Labore, natus?</p>
+                        </div>
+                        <div class="acciones">
+                            <button type="button" class="aceptar" id="aceptar">Aceptar</button>
+                            <button type="button" class="eliminar" id="eliminar">Eliminar</button>
+                            <button type="button" class="bloquear" id="bloquear">Bloquear usuario</button>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <div class="imagen">
+                            <img src="img/woman.jpg" alt="" class="profiel-img">
+                        </div>
+                        <div class="titulo-direccion">
+                            <a href="#" class="user-name">Jane Doe</a>
+                            <p>en <a href="#" class="entrada-hecha">Mi primer entrada</a></p>
+                        </div>
+                        <div class="comentario-texto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quidem corrupti est repellendus consequatur aliquam, quas nisi voluptatibus qui architecto vitae vel tempore a, sunt ad incidunt necessitatibus. Labore, natus?</p>
+                        </div>
+                        <div class="acciones">
+                            <button type="button" class="aceptar" id="aceptar">Aceptar</button>
+                            <button type="button" class="eliminar" id="eliminar">Eliminar</button>
+                            <button type="button" class="bloquear" id="bloquear">Bloquear usuario</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
