@@ -46,3 +46,22 @@ p {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+@media (min-width: 768px){
+    .contenedor-flex{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contenido-principal{
+        flex-basis: calc(60% - 1rem);
+    }
+
+    .sidebar{
+        flex-basis: calc(20% - 1rem);
+    }
+
+    .sidebar1{
+        order: -1;
+    }
+}
