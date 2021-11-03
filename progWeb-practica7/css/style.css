@@ -33,7 +33,7 @@ body{
     grid-template-areas: "dashboard entrada estadistica";
 }
 
-@media screen and (min-width: 576px) and (max-width: 768px){
+@media screen and (max-width: 1400px){
     .conteiner{
         grid-template-columns: 20% 80%;
         grid-template-areas: "dashboard entrada" "dashboard estadistica";
@@ -57,7 +57,6 @@ body{
     color: var(--blanco);
     padding: 2rem;
     border-bottom: solid 1px var(--separacion);
-    transition: ease-in-out 0.3s;
 }
 
 .opciones:hover{
@@ -84,12 +83,14 @@ body{
 
 .titulo{
     width: 100%;
+    outline: none;
 }
 
 .texto{
     width: 100%;
     height: 40rem;
     resize: none;
+    outline: none;
 }
 
 .boton{
@@ -100,7 +101,6 @@ body{
     border-radius: 0.5rem;
     font-size: 2rem;
     cursor: pointer;
-    transition: ease-in-out 0.3s;
 }
 
 .boton:hover{
@@ -111,6 +111,7 @@ body{
     height: 100%;
     padding: 4rem;
     grid-area: estadistica;
+    min-width: 450px;
 }
 
 .estadistica-comentarios h2{
@@ -188,6 +189,10 @@ body{
 .titulo-direccion a, p a{
     text-decoration: none;
     color: var(--principal);
+}
+
+.titulo-direccion a:hover, p a:hover{
+    text-decoration: underline;
 }
 
 .comentario-texto{
