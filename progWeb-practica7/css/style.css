@@ -53,10 +53,16 @@ body{
     padding: 2rem 0;
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+}
+
 .opciones{
     color: var(--blanco);
     padding: 2rem;
     border-bottom: solid 1px var(--separacion);
+    text-decoration: none;
 }
 
 .opciones:hover{

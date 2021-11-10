@@ -1,0 +1,198 @@
+:root{
+    --Open-Sans: 'Open Sans', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --fondo: #f2f2f2;
+}
+
+body{
+    background-color: var(--fondo);
+    font-size: 16px;
+    font-family: var(--Open-Sans);
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    margin: 0;
+}
+
+.barra-lateral{
+    background-color: #262a34;
+    min-width: 300px;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.barra-lateral a{
+    color: #fff;
+}
+
+.barra-lateral .logo{
+    background-color: #0275db;
+}
+
+.barra-lateral .logo h2{
+    font-size: 30px;
+    font-family: var(--Roboto);
+    text-align: center;
+    font-weight: 300;
+}
+
+.barra-lateral .menu a{
+    display: flex;
+    padding: 20px;
+    font-family: var(--Roboto);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.barra-lateral .menu a:hover{
+    background-color: #35ac6b;
+}
+
+.barra-lateral .menu a svg{
+    margin-right: 10px;
+}
+
+/* --- --- Main --- ---*/
+.main{
+    padding-top: 40px;
+}
+
+.main .columna{
+    padding: 0px 40px
+}
+
+.main .titulo{
+    color: #262a34;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: var(--Roboto);
+    margin-bottom: 20px;
+}
+
+.main .widget{
+    margin-bottom: 40px;
+}
+
+.formulario input[type="text"], .formulario textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: var(--Roboto);
+    border: none;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.formulario textarea{
+    max-height: 400px;
+    min-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.formulario button{
+    background-color: #0275db;
+    color: #fff;
+    font-family: var(--Roboto);
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    display: inline-block;
+    padding: 10px;
+    width: 200px;
+    border-radius: 3px;
+    transition: 0.3s ease all;
+}
+
+.formulario button:hover{
+    background-color: #025aa5;
+}
+
+.formulario button svg{
+    margin-right: 10px;
+}
+
+/* --- --- Estadísticad --- --- */
+.main .estadisticas .contenedor{
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.main .estadisticas .caja{
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    padding: 40px 20px;
+    flex: 1; /*flex-basics*/
+    text-align: center;
+    font-family: var(--Roboto);
+}
+
+.main .estadisticas .caja p{
+    color: #a8a8a8;
+    margin: 0;
+}
+.main .estadisticas .caja h3{
+    margin: 10px;
+    color: #35ae6b;
+}
+
+.main .estadisticas .caja:first-child{
+    border-right: none;
+}
+
+.main .estadisticas .caja:last-child{
+    border-left: none;
+}
+
+/* Media Queries */
+
+/* Dispositivos extra-pequeños xs*/
+/* max-width 0 - 320 */
+@media screen and (max-width: 320px){
+    
+}
+
+/* Dispositivos pequeños sm*/
+/* max-width 0 - 576 */
+@media screen and (max-width: 576px){
+    .barra-lateral{
+        min-height: auto;
+    }
+}
+
+/* Dispositivos mediano md*/
+/* max-width 0 - 768 */
+@media screen and (max-width: 768px){
+    
+}
+
+/* Dispositivos largos lg*/
+/* max-width 0 - 992 */
+@media screen and (max-width: 992px){
+    .barra-lateral .logo{
+        display: none;
+    }
+
+    .barra-lateral{
+        min-width: auto;
+    }
+
+    .barra-lateral .menu a svg{
+        display: none;
+    }
+}
+
+/* Dispositivos largos xl*/
+/* max-width 0 - 1200 */
+@media screen and (max-width: 1200px){
+    
+}
+
+/* Dispositivos largos xxl*/
+/* max-width 0 - 1400 */
+@media screen and (max-width: 1400px){
+    
+}
