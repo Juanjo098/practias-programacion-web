@@ -13,7 +13,7 @@ cargarEventListeners();
 function cargarEventListeners() {
     listaProductos.addEventListener("click", cargarProducto);
     document.addEventListener('DOMContentLoaded', () =>{
-        carrito = JSON.parse(localStorage.getItem('carrito')) || 0;
+        carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         dibujarCarrito();
     })
 };
