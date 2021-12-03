@@ -2,7 +2,7 @@
 By: Juan José Silva López*/
 
 // Declarar variables
-const listaProductos = document.querySelector('.lista-productos');
+const productos = document.querySelector('.lista-productos');
 const miCarrito = document.querySelector('#mi-carrito');
 const numeroProductos = document.getElementById('numero-producto');
 
@@ -11,7 +11,7 @@ let carrito = [];
 cargarEventListeners();
 
 function cargarEventListeners() {
-    listaProductos.addEventListener("click", cargarProducto);
+    productos.addEventListener("click", cargarProducto);
     document.addEventListener('DOMContentLoaded', () =>{
         carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         dibujarCarrito();
