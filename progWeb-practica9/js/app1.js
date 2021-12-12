@@ -1,7 +1,10 @@
 const contenidoCarrito = document.querySelector('#contenido-carrito');
-const totalCompra = document.querySelector('#total');
 const miCarrito = document.querySelector('#mi-carrito');
 const numeroProductos = document.getElementById('numero-producto');
+const subtotal = document.querySelector('#subtotal');
+const evnvio = document.querySelector('#envio');
+const total = document.querySelector('#total');
+
 let listaProductos = [];
 
 // Eventos
@@ -10,15 +13,14 @@ cargarEventListeners();
 function cargarEventListeners(){
     document.addEventListener('DOMContentLoaded', () =>{
         listaProductos = JSON.parse(localStorage.getItem('carrito')) || [];
-        console.log(listaProductos);
         dibujarProducto();
         calcularTotal();
         dibujarCarrito();
     });
 
     contenidoCarrito.addEventListener('input', (e) =>{
-        const index = indiceNodo(e.target.parentNode.parentNode.parentNode);
         const parent = e.target.parentNode.parentNode.parentNode;
+        const index = indiceNodo(parent);
         listaProductos[index].cantidad = parseInt(e.target.value);
         dibujarCarrito();
         sincronizarLocalStorage();
@@ -62,22 +64,35 @@ function dibujarProducto() {
                     value="${producto.cantidad}" min="1" max="100">
             </div>
         </td>
-        <td class="precio">$${parseFloat(producto.precio.replace('$', '') * producto.cantidad)}</td>
+        <td class="precio">${formatoMoneda(producto.precio * producto.cantidad)}</td>
         <td>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                <span aria-hidden="true"><i class="fa fa-close" onclick="eliminarProducto2(${producto.id})"></i></span>
             </button>
         </td>`;
         contenidoCarrito.appendChild(tmp);
     });
 }
 
+function formatoMoneda(cantidad) {
+    let valor = (cantidad).toLocaleString('es-MX', {
+        style: 'currency',
+        currency: 'MXN',
+    });
+    return valor;
+}
+
 function calcularTotal() {
     let suma = 0;
+    let envio;
     listaProductos.forEach(producto => {
-        suma += (parseFloat(producto.precio.replace('$', '') * producto.cantidad));
+        suma += (producto.precio * producto.cantidad);
     });
-    totalCompra.textContent = `$${suma}`;
+    envio = suma > 2000 ? 0 : 380;
+    subtotal.textContent = formatoMoneda(suma);
+    evnvio.textContent = formatoMoneda(envio);
+    total.textContent = formatoMoneda(suma + envio);
+    localStorage.setItem('infoPago', JSON.stringify({subtotal: suma, envio: envio, total: suma + envio}));
 }
 
 function indiceNodo(nodo){
@@ -93,11 +108,23 @@ function indiceNodo(nodo){
 }
 
 function actualizarTotalProducto(index, producto, cantidad) {
-    producto.querySelector('.precio').textContent = `$${(parseFloat(listaProductos[index].precio.replace('$', '')) * cantidad)}`;
+    producto.querySelector('.precio').textContent = formatoMoneda(listaProductos[index].precio * cantidad);
 }
 
 function sincronizarLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(listaProductos))
+}
+
+function eliminarProducto2(idProducto) {
+    // listaProductos.splice(listaProductos.findIndex((producto) =>{
+    //         producto.id == idProducto
+    //     }), 1);
+    listaProductos.filter((producto) =>{
+        producto.id != idProducto;
+    })
+    dibujarCarrito();
+    calcularTotal();
+    sincronizarLocalStorage();
 }
 
 function eliminarProducto(e) {

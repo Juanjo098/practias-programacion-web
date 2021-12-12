@@ -9,6 +9,9 @@ const carrito = [
     {id:400, nombre: "Mouse óptico inalámbrico", precio: 1875.8, tipo: 2},
 ];
 
+const memo = {nombre: "Paco", appellido:"días"};
+let nombre = Object.
+
 meses.forEach(function(m) {
     console.log(m);
 });

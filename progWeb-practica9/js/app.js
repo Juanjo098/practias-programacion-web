@@ -22,9 +22,9 @@ function obtenerInformacionProducto(producto) {
     infoProducto = {
         imagen: producto.children[0].style.backgroundImage.replace(/"/g, ''),
         nombre: producto.querySelector('.info-producto h2').textContent,
-        precio: producto.querySelector('.info-producto .precio-producto').textContent,
+        precio: parseFloat(producto.querySelector('.info-producto .precio-producto').textContent.replace('$', '')),
         cantidad: 1,
-        id: producto.querySelector('a').getAttribute('data-id')
+        id: parseInt(producto.querySelector('a').getAttribute('data-id'))
     }
     // Verificar si el producto ya existe en el carrito
     const existe = carrito.some(producto => producto.id === infoProducto.id);
@@ -66,7 +66,7 @@ function dibujarCarrito() {
                                 <div class="img" style="background-image: ${producto.imagen};"></div>
                                 <div class="text pl-3">
                                     <h4>${producto.nombre}</h4>
-                                    <p class="mb-0"><a href="#" class="price">${producto.precio}</a><span class="quantity ml-3">Quantity: ${producto.cantidad}</span></p>
+                                    <p class="mb-0"><a href="#" class="price">${producto.precio}</a><span class="quantity ml-3">Cantidad: ${producto.cantidad}</span></p>
                                 </div>
                             </div>`;
         miCarrito.appendChild(divHTML);
